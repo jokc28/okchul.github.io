@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="Online Continual Learning on Hierarchical Label Expansion introduces a novel continual learning setup with inherent hierarchies.">
+  <meta name="keywords" content="Continual Learning, Hierarchical Multi-Label Classification, Deep Learning, Machine Learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>Online Continual Learning on Hierarchical Label Expansion</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+<!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -52,7 +52,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
+      <a class="navbar-item" href="https://icl.snu.ac.kr/members#h.qlq4jccxfph2">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
@@ -258,31 +258,25 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            Continual learning (CL) enables models to adapt to new tasks and environments without 
+            forgetting previously learned knowledge. While current CL setups have ignored the relationship
+            between labels in the past task and the new task with or without small task overlaps, real-world 
+            scenarios often involve hierarchical relationships between old and new tasks, posing another 
+            challenge for traditional CL approaches. To address this challenge, we propose a novel 
+            multi-level hierarchical class incremental task configuration with an online learning 
+            constraint, called hierarchical label expansion (HLE). 
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Our configuration allows a network to first learn coarse-grained classes, with data 
+            labels continually expanding to more fine-grained classes in various hierarchy depths. 
+            To tackle this new setup, we propose a rehearsal-based method that utilizes hierarchy-aware 
+            pseudo-labeling to incorporate hierarchical class information. Additionally, we propose a 
+            simple yet effective memory management and sampling strategy that selectively adopts samples 
+            of newly encountered classes. Our experiments demonstrate that our proposed method can effectively 
+            use hierarchy on our HLE setup to improve classification accuracy across all levels of hierarchies, 
+            regardless of depth and class imbalance ratio, outperforming prior state-of-the-art works by 
+            significant margins while also outperforming them on the conventional disjoint, blurry and 
+            i-Blurry CL setups.
           </p>
         </div>
       </div>
