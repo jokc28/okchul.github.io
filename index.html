@@ -214,7 +214,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Overview</h2>
+        <h2 class="title is-3">Overview of Hierarchical Label Expansion</h2>
           <div className="container is-max-desktop">
               <img id="overview"
                       height={"100%"}
@@ -222,8 +222,107 @@
                       alt={"overview"}>
               </img>
               <h2 className="subtitle has-text-centered">
-                  Overview of PODIA-3D. (a) We prepare data for training pose-preserved diffusion models (PPD) and (b) fine-tune the depth-guided diffusion models on the collected data. (c) We use a specialized-to-general sampling strategies to generate high quality pose-aware target images. (d) Finally, we fine-tune the state-of-the-art 3D generator on them adversarially.
+                Comparison sketch between conventional, blurry, and our HLE setups. (a) Conventional task-free online CL setup gradually introduces new classes and classifies data without task identification (b) Blurry task-free online CL setup where classes are divided into major and minor categories at each task, with varying proportions, leads to unclear task boundaries (c) Proposed HLE CL setup features class label expansion where child class labels are added to parent class labels throughout the learning process.    
               </h2>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">HLE Scenarios</h2>
+          <div className="container is-max-desktop">
+              <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/figure2_expansion_scenario.png"
+                      alt={"overview"}>
+              </img>
+              <h2 className="subtitle has-text-centered">
+                An illustration of two HLE scenarios. (a) In single-depth scenario, fine-grained classes grow horizontally from coarse-grained ones within the same level.  This scenario is further explored through dual-label (overlapping data) and single-label (disjoint data) setups(b) In multiple-depth scenario, classes grow vertically from coarse to fine across different hierarchy levels.
+              </h2>
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">HLE Scenarios</h2>
+          <div className="container is-max-desktop">
+              <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/figure3_method.png"
+                      alt={"overview"}>
+              </img>
+              <h2 className="subtitle has-text-centered">
+                Sketch of our proposed method, PL-FMS’s two components: PL and FMS. (a) Pseudo-Labeling based memory management (PL) outlines the method of discarding a data sample, which will be replaced with incoming data, based on its effect on reducing loss, irrespective of its label’s nature (true or pseudo)..(b) Flexible Memory Sampling (FMS) shows formation of the training batch by filtering and compensating data samples.
+              </h2>
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">HLE Scenarios</h2>
+          <div className="container is-max-desktop">
+              <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/figure3_method.png"
+                      alt={"overview"}>
+              </img>
+              <h2 className="subtitle has-text-centered">
+                Sketch of our proposed method, PL-FMS’s two components: PL and FMS. (a) Pseudo-Labeling based memory management (PL) outlines the method of discarding a data sample, which will be replaced with incoming data, based on its effect on reducing loss, irrespective of its label’s nature (true or pseudo)..(b) Flexible Memory Sampling (FMS) shows formation of the training batch by filtering and compensating data samples.
+              </h2>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">HLE Scenarios</h2>
+          <div className="container is-max-desktop">
+              <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/table1.png"
+                      alt={"overview"}>
+              </img>
+              <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/figure8_overlap.png"
+                      alt={"overview"}>
+              </img>            
+              <h2 className="subtitle has-text-centered">
+                Table and figures for experimental results of baseline methods and our proposed method (PL-FMS) evaluated on HLE setup for single-depth hierarchy scenario in CIFAR100, ImageNet-Hier100, and Stanford Cars. In the table, dual-label means overlapping data between tasks, and single-label means disjoint data between tasks. Classification accuracy on hierarchy level 1 and 2 at the final task (%) was measured for all datasets. In the figure, H=1 is parent classes and H=2 child classes. Task index 1 receives parent class labeled data and subsequent indexes receive child class labeled data. Each data point shows average accuracy over three runs (± std. deviation).
+              </h2>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">HLE Scenarios</h2>
+          <div className="container is-max-desktop">
+              <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/talbe2.png"
+                      alt={"overview"}>
+              </img>
+              <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/figure5_depth5.png"
+                      alt={"overview"}>
+              </img>            
+              <h2 className="subtitle has-text-centered">
+                Table and figures for experimental results of baseline methods and our proposed method (PL-FMS) evaluated on the HLE setup for the multiple-depth hierarchy scenario in CIFAR100 and iNaturalist-19. The classification accuracy on all hierarchy levels at the final task(%) was measured for all datasets.</h2>
           </div>
       </div>
     </div>
